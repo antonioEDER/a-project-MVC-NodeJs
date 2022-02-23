@@ -4,7 +4,8 @@
   "description": "Exemplo prático do artigo: \"MVC - Conceito e exemplo em Node.JS\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Anderson Irias",
   "license": "ISC",

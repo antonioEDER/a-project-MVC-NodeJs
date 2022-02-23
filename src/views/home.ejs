@@ -8,30 +8,6 @@
   <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
-<script>
-  <%
-  function addCard (obj) {
-      console.log('obj =>', obj);
-      const sessionStorage = SessionStorage
-  
-      const CARD = "card";
-      let itens = [];
-  
-      const listCard = sessionStorage.getItem(CARD);
-      if (listCard) {
-        const card = JSON.parse(listCard);
-        itens = card;
-      }
-  
-      // const product = JSON.parse(obj.dataset.product);
-      // itens.push(product);
-  
-      sessionStorage.setItem(CARD, JSON.stringify(itens));
-    }
-  %>
-  
-  </script>
-
 <body>
   <div class="container">
     <br />
@@ -43,23 +19,26 @@
     <% if (products.length> 0) { %>
       <div class="row">
         <% for(var i=0; i < products.length; i++) {%>
-          <div id="card" class="card col-3 jumbotron p-3 m-2">
-            <img src="<%= products[i].image %>" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <div class="card-title">
-                <%= products[i].title %>
+          <div class="card col-3 jumbotron p-3 m-2">
+            <form action="<%= encodeURI('/carrinho?produto='+JSON.stringify(products[i]))%>" method="POST" >
+              <img src="<%= products[i].image %>" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <div class="card-title">
+                  <%= products[i].title %>
+                </div>
+                <p class="card-text fs-3 text-danger">
+                  R$ <%= products[i].price %>
+                </p>
+                <button class="btn btn-success" type="submit">
+                  Adicionar ao carrinho
+                </button>
               </div>
-              <p class="card-text fs-3 text-danger">
-                R$ <%= products[i].price %>
-              </p>
-              <button onclick="addCard()" class="btn btn-success">
-                Adicionar ao carrinho
-              </button>
-            </div>
+            </form>
           </div>
           <% } %>
       </div>
       <% } %>
   </div>
 </body>
+
 </html>

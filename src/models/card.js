@@ -1,12 +1,9 @@
 var SessionStorage = require('node-sessionstorage');
 const sessionStorage = SessionStorage;
-
+const CARD = "card";
 class products {
   get(callback) {
-    const CARD = 'card';
     const listCard = sessionStorage.getItem(CARD);
-    console.log('listCard', listCard);
-    console.log('sessionStorage', sessionStorage);
     let data = [];
 
     if (listCard) {
@@ -22,6 +19,19 @@ class products {
       });
     }
     callback(null, data);
+  }
+  set(p) {
+    let itens = [];
+    const listCard = sessionStorage.getItem(CARD);
+    if (listCard) {
+      const card = JSON.parse(listCard);
+      itens = card;
+    }
+  
+    const product = JSON.parse(p);
+    itens.push(product);
+
+    sessionStorage.setItem(CARD, JSON.stringify(itens));
   }
 }
 
