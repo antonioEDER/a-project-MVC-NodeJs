@@ -33,6 +33,16 @@ class products {
 
     sessionStorage.setItem(CARD, JSON.stringify(itens));
   }
+  delete(id) {
+    let itens = [];
+    const listCard = sessionStorage.getItem(CARD);
+    if (listCard) {
+      const card = JSON.parse(listCard);
+      itens = card.filter((p) => parseInt(p.id) !== parseInt(id));
+    }
+  
+    sessionStorage.setItem(CARD, JSON.stringify(itens));
+  }
 }
 
 module.exports = function () {

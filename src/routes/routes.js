@@ -10,5 +10,9 @@ module.exports = function(application){
   application.post('/carrinho', function(req, res){
     application.src.controllers.card.setProduct(application, req, res);
   });
+
+  application.delete('/carrinho/:id', function(req, res){
+    application.src.controllers.card.delProduct(application, req, res);
+  });
 }
 
