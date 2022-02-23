@@ -1,33 +1,37 @@
-// https://expressjs.com/pt-br/
-//  O Express.js é um Framework utilizados em conjunto com o Node.js, 
-//  facilitando no desenvolvimento de aplicações back-end ou aplicações full-stack.
-// 1- Sistema de rotas
-// 2- sistemas de templates que facilitam a criação de páginas web
-// 3- tratamento de exceções 
-// 4- Gerencia requisições HTTP
-var express = require('express');
+const express = require('express');
+const blogRoutes = require('./routes/blogRoutes');
 
-// https://github.com/jarradseers/consign
-// Usado para carregar automaticamente modelos, rotas, esquemas, configurações, 
-// controladores, mapas de objetos...
-var consign = require('consign');
+// express app
+const app = express();
 
-var app = express();
-
-// https://ejs.co/
-// Embedded JavaScript templating (EJS) e é uma linguagem de modelagem simples 
-// que permite gerar marcação HTML com JavaScript simples.
+// register view engine
 app.set('view engine', 'ejs');
 
-app.set('views', './src/views');
+// middleware & static files
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  res.locals.path = req.path;
+  next();
+});
 
-consign()
-  .include('src/routes')
-  .then('src/controllers')
-  .then('src/models')
-  .into(app);
+// routes
+app.get('/', (req, res) => {
+  res.redirect('/blogs');
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About' });
+});
+
+// blog routes
+app.use('/blogs', blogRoutes);
+
+// 404 page
+app.use((req, res) => {
+  res.status(404).render('404', { title: '404' });
+});
 
 app.listen(3000, function(){
   console.log('APP rodando na porta 3000');
 });
-
