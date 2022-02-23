@@ -28,8 +28,7 @@
               <p class="card-text fs-3 text-danger">
                 R$ <%= products[i].price %>
               </p>
-              <button onclick="addCard(this)" data-product="<%= JSON.stringify(products[i]) %>"
-                class="btn btn-success">
+              <button onclick="window.addCard(this)" data-product="<%= JSON.stringify(products[i]) %>" class="btn btn-success">
                 Adicionar ao carrinho
               </button>
             </div>
@@ -38,8 +37,15 @@
       </div>
       <% } %>
   </div>
-  <script>
-    console.log('<%= JSON.stringify(products) %>');
-  </script>
 </body>
+
 </html>
+
+<script>
+  const CARD = "card";
+  function addCard (element) {
+    const product = JSON.parse(element.dataset.product);
+    const set = '<%= set %>'
+    set(product)
+  };
+</script>

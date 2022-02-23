@@ -23,7 +23,6 @@ app.set('views', './src/views');
 
 consign()
   .include('src/routes')
-  .then('src/common')
   .then('src/models')
   .then('src/controllers')
   .into(app);
