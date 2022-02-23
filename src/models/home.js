@@ -21,22 +21,6 @@ class products {
       callback(err, data);
     });
   }
-  set(val) {
-    console.log('val =>', val);
-    // const CARD = "card";
-    // let itens = [];
-  
-    // const listCard = sessionStorage.getItem(CARD);
-    // if (listCard) {
-    //   const card = JSON.parse(listCard);
-    //   itens = card;
-    // }
-  
-    // const product = JSON.parse(prod);
-    // itens.push(product);
-  
-    // sessionStorage.setItem(CARD, JSON.stringify(itens));
-  }
 }
 
 module.exports = function(){

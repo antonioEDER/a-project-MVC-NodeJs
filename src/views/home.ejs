@@ -8,6 +8,30 @@
   <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
+<script>
+  <%
+  function addCard (obj) {
+      console.log('obj =>', obj);
+      const sessionStorage = SessionStorage
+  
+      const CARD = "card";
+      let itens = [];
+  
+      const listCard = sessionStorage.getItem(CARD);
+      if (listCard) {
+        const card = JSON.parse(listCard);
+        itens = card;
+      }
+  
+      // const product = JSON.parse(obj.dataset.product);
+      // itens.push(product);
+  
+      sessionStorage.setItem(CARD, JSON.stringify(itens));
+    }
+  %>
+  
+  </script>
+
 <body>
   <div class="container">
     <br />
@@ -28,7 +52,7 @@
               <p class="card-text fs-3 text-danger">
                 R$ <%= products[i].price %>
               </p>
-              <button onclick="window.addCard(this)" data-product="<%= JSON.stringify(products[i]) %>" class="btn btn-success">
+              <button onclick="addCard()" class="btn btn-success">
                 Adicionar ao carrinho
               </button>
             </div>
@@ -38,14 +62,4 @@
       <% } %>
   </div>
 </body>
-
 </html>
-
-<script>
-  const CARD = "card";
-  function addCard (element) {
-    const product = JSON.parse(element.dataset.product);
-    const set = '<%= set %>'
-    set(product)
-  };
-</script>
