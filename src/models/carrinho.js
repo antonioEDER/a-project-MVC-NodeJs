@@ -24,8 +24,6 @@ class products {
   adicionar(p) {
     let itens = [];
 
-    console.log(p);
-
     const produtosCarrinho = sessionStorage.getItem(CARRINHO);
 
     if (produtosCarrinho) {

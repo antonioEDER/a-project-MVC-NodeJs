@@ -31,7 +31,7 @@
                 <p class="card-text fs-3 text-danger">
                   R$ <%= produtos[i].preco %>
                 </p>
-                <button onclick="window.adicionarProduto( '<%= encodeURI(JSON.stringify(produtos[i])) %>' )" class="btn btn-success" type="button">
+                <button id="<%= produtos[i].id %>" onclick="window.adicionarProduto(' <%= encodeURI(JSON.stringify(produtos[i])) %>', '<%= produtos[i].id %>' )" class="btn btn-success" type="button">
                   Adicionar ao carrinho
                 </button>
               </div>
@@ -43,12 +43,18 @@
   </div>
 </body>
 <script>
-  function adicionarProduto(obj) {
-    fetch('/carrinho?produto='+obj, {
-      method: 'POST',
+  function adicionarProduto(obj, id) {
+    document.getElementById(id).innerHTML = "Adicionado";
+    document.getElementById(id).className = "btn btn-info";
+
+    fetch("/carrinho?produto="+obj, {
+      method: "POST",
     })
     .then(response => response.json())
-    .then(data => window.location.href = data.redirect)
+    .then((data) => {
+      window.location.href = data.redirect
+    }
+    )
   }
 </script>
 </html>
