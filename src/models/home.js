@@ -1,29 +1,27 @@
 var fs = require('fs');
-// var SessionStorage = require('node-sessionstorage');
-// const sessionStorage = SessionStorage;
-class products {
-  get(callback) {
-    fs.readFile('./data/products.json', 'utf8', function (err, result) {
-      let data = [];
+class produtos {
+  buscar(callback) {
+    fs.readFile('./data/produtos.json', 'utf8', function (err, lista) {
+      let dados = [];
 
       if (!err) {
-        const products = JSON.parse(result);
+        const produtos = JSON.parse(lista);
 
-        let i = (products.length - 1);
+        let i = (produtos.length - 1);
 
-        products.forEach(function (product) {
+        produtos.forEach(function (product) {
           if (i >= 0) {
-            data[i] = product;
+            dados[i] = product;
             i--;
           }
         });
       }
-      callback(err, data);
+      callback(err, dados);
     });
   }
 }
 
 module.exports = function(){
-  return products;
+  return produtos;
 }
 

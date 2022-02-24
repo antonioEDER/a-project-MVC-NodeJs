@@ -16,18 +16,18 @@
       <div><a href="/carrinho">Ir para carrinho</a></div>
     </div>
     <br />
-    <% if (products.length> 0) { %>
+    <% if (produtos.length> 0) { %>
       <div class="row">
-        <% for(var i=0; i < products.length; i++) {%>
+        <% for(var i=0; i < produtos.length; i++) {%>
           <div class="card col-3 jumbotron p-3 m-2">
-            <form action="<%= encodeURI('/carrinho?produto='+JSON.stringify(products[i]))%>" method="POST" >
-              <img src="<%= products[i].image %>" class="card-img-top" alt="..." />
+            <form action="<%= encodeURI('/carrinho?produto='+JSON.stringify(produtos[i]))%>" method="POST" >
+              <img src="<%= produtos[i].imagem %>" class="card-img-top" alt="..." />
               <div class="card-body">
                 <div class="card-title">
-                  <%= products[i].title %>
+                  <%= produtos[i].titulo %>
                 </div>
                 <p class="card-text fs-3 text-danger">
-                  R$ <%= products[i].price %>
+                  R$ <%= produtos[i].preco %>
                 </p>
                 <button class="btn btn-success" type="submit">
                   Adicionar ao carrinho

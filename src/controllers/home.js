@@ -1,9 +1,9 @@
 
 module.exports.index = async function(application, req, res) {
-  const products = new application.src.models.home();
+  const produtos = new application.src.models.home();
 
-  products.get(function(err, result) {
-    res.render("home", { products: result });
+  produtos.buscar(function(err, dados) {
+    res.render("home", { produtos: dados });
   });
 }
 

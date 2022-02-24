@@ -16,22 +16,22 @@
       <div><a href="/">Voltar para home</a></div>
     </div>
     <br />
-    <% if (products) { %>
+    <% if (produtos) { %>
       <div class="row">
-        <% for(var i=0; i < products.length; i++) {%>
+        <% for(var i=0; i < produtos.length; i++) {%>
           <div class="row">
-            <% for(var i=0; i < products.length; i++) {%>
+            <% for(var i=0; i < produtos.length; i++) {%>
               <div class="card col-3 jumbotron p-3 m-2">
                 <form >
-                  <img src="<%= products[i].image %>" class="card-img-top" alt="..." />
+                  <img src="<%= produtos[i].imagem %>" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <div class="card-title">
-                      <%= products[i].title %>
+                      <%= produtos[i].titulo %>
                     </div>
                     <p class="card-text fs-3 text-danger">
-                      R$ <%= products[i].price %>
+                      R$ <%= produtos[i].preco %>
                     </p>
-                    <button onclick="window.deleteProduct('<%= products[i].id%>')" id="delete-product" class="btn btn-danger" type="button">
+                    <button onclick="window.deleteProduct('<%= produtos[i].id%>')" id="delete-product" class="btn btn-danger" type="button">
                       Remover do carrinho
                     </button>
                   </div>
