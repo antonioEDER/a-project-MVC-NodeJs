@@ -6,42 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>MVC Exemplo Node.JS</title>
   <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 </head>
 
 <body>
   <div class="container">
     <br />
     <div class="d-flex justify-content-between">
-      <h2 class="m-2">Carrinho</h2>
-      <div><a href="/">Voltar para home</a></div>
+      <h2 class="m-2"> <i class="bi bi-basket"></i> Carrinho</h2>
+      <div><a class="btn" href="/"><i class="bi bi-arrow-left-circle-fill"></i> Voltar para home</a></div>
     </div>
     <br />
-    <% if (produtos) { %>
+    <% if (produtos.length > 0) { %>
       <div class="row">
         <% for(var i=0; i < produtos.length; i++) {%>
-          <div class="row">
+          <ul class="list-group col-6 m-2">
             <% for(var i=0; i < produtos.length; i++) {%>
-              <div class="card col-3 jumbotron p-3 m-2">
-                <form >
-                  <img src="<%= produtos[i].imagem %>" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <div class="card-title">
+              <li class="row list-group-item p-4">
+                <div>
+                  <img height="100px" width="100px" src="<%= produtos[i].imagem %>" alt="..." />
+                  <div class="flex">
+                    <div>
                       <%= produtos[i].titulo %>
                     </div>
-                    <p class="card-text fs-3 text-danger">
+                    <p class="fs-3 text-danger">
                       R$ <%= produtos[i].preco %>
                     </p>
                     <button onclick="window.deleteProduct('<%= produtos[i].id%>')" id="delete-product" class="btn btn-danger" type="button">
-                      Remover do carrinho
+                      <i class="bi bi-trash"></i> Remover
                     </button>
                   </div>
-                </form>
-              </div>
+                </div>
+              </li>
               <% } %>
-          </div>
+          </ul>
           <% } %>
+          <ul class="list-group col-5 m-2">
+            <li class="row list-group-item">
+              Total: <b>R$ <%= produtos.reduce((a, b) => parseFloat(a) + parseFloat(b.preco), 0) %></b>
+            </li>
+          </ul>
       </div>
-      <% } %>
+    <% } else { %>
+      <p><i class="bi bi-info-circle"></i> O carrinho está vazio. Vamos fazer uma comprinhas?... <i class="bi bi-emoji-smile"></i></p>
+    <% } %>
   </div>
 </body>
 

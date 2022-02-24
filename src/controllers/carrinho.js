@@ -11,7 +11,7 @@ const adicionarProduto = function(application, req, res, next) {
 
   const p = req.query.produto
   produtos.adicionar(p);
-  res.redirect("/carrinho")
+  res.redirect("/")
 }
 
 const removerProdutos = function(application, req, res, next) {

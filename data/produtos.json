@@ -3,33 +3,33 @@
     "id": 1,
     "titulo": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "preco": 109.95,
-    "categoria": "men's clothing",
+    "categoria": "men s clothing",
     "imagem": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
   },
   {
     "id": 2,
     "titulo": "Mens Casual Premium Slim Fit T-Shirts ",
     "preco": 22.3,
-    "categoria": "men's clothing",
+    "categoria": "men s clothing",
     "imagem": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
   },
   {
     "id": 3,
     "titulo": "Mens Cotton Jacket",
     "preco": 55.99,
-    "categoria": "men's clothing",
+    "categoria": "men s clothing",
     "imagem": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
   },
   {
     "id": 4,
     "titulo": "Mens Casual Slim Fit",
     "preco": 15.99,
-    "categoria": "men's clothing",
+    "categoria": "men s clothing",
     "imagem": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
   },
   {
     "id": 5,
-    "titulo": "John Hardy Women's Legends Naga Gold",
+    "titulo": "John Hardy Women s Legends Naga Gold",
     "preco": 695,
     "categoria": "jewelery",
     "imagem": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
@@ -99,30 +99,30 @@
   },
   {
     "id": 15,
-    "titulo": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "titulo": "BIYLACLESEN Women s 3-in-1 Snowboard Jacket Winter Coats",
     "preco": 56.99,
-    "categoria": "women's clothing",
+    "categoria": "women s clothing",
     "imagem": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
   },
   {
     "id": 16,
-    "titulo": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "titulo": "Lock and Love Women s Removable Hooded Faux Leather Moto Biker Jacket",
     "preco": 29.95,
-    "categoria": "women's clothing",
+    "categoria": "women s clothing",
     "imagem": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
   },
   {
     "id": 17,
     "titulo": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     "preco": 39.99,
-    "categoria": "women's clothing",
+    "categoria": "women s clothing",
     "imagem": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
   },
   {
     "id": 18,
-    "titulo": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "titulo": "MBJ Women s Solid Short Sleeve Boat Neck V ",
     "preco": 9.85,
-    "categoria": "women's clothing",
+    "categoria": "women s clothing",
     "imagem": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
   },
   {
@@ -136,7 +136,7 @@
     "id": 20,
     "titulo": "DANVOUY Womens T Shirt Casual Cotton Short",
     "preco": 12.99,
-    "categoria": "women's clothing",
+    "categoria": "women s clothing",
     "imagem": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
   }
 ]
