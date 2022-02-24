@@ -40,7 +40,6 @@ class products {
       const card = JSON.parse(listCard);
       itens = card.filter((p) => parseInt(p.id) !== parseInt(id));
     }
-  
     sessionStorage.setItem(CARD, JSON.stringify(itens));
   }
 }

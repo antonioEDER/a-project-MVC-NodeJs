@@ -16,6 +16,7 @@ const setProduct = function(application, req, res, next) {
 const delProduct = function(application, req, res, next) {
   const products = new application.src.models.card();
   const id = req.params.id;
+  products.delete(id);
   res.method = 'GET'
   res.json({ redirect: '/carrinho' });
 }

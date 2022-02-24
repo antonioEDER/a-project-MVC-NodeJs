@@ -31,7 +31,7 @@
                     <p class="card-text fs-3 text-danger">
                       R$ <%= products[i].price %>
                     </p>
-                    <button onclick="window.deleteProduct(<%= products[i].id %>)" id="delete-product" class="btn btn-danger" type="button">
+                    <button onclick="window.deleteProduct('<%= products[i].id%>')" id="delete-product" class="btn btn-danger" type="button">
                       Remover do carrinho
                     </button>
                   </div>
